@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { SessionProvider } from './contexts/SessionContext';
 
 //import components here -> NAHHH components within the pages, not here
 

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 
+import axios from 'axios';
+
 function RepoList() {
     const [repos, setRepos] = useState([]);
     
@@ -9,9 +11,8 @@ function RepoList() {
         async function fetchRepos() {
             try {
 
-            const response = await fetch('https://api.github.com/users/markolilu/repos');
-            const data = await response.json();
-            setRepos(data);
+            const response = await axios.get('https://api.github.com/users/markolilu/repos');
+            setRepos(response.data);
             } catch (error) {
                 console.error('Error fetching repos:', error);
             }
