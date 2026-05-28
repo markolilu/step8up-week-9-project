@@ -2,14 +2,21 @@
 
 function ProjectList({ repos }) {
     
+
     return (
         <div>
             <h2>My GitHub Repositories</h2>
-            <ul>
+            
                 {repos.map(repo => (
-                    <li key={repo.id}>{repo.name}</li>
+                    <div key={repo.id} className='repo-card'>
+                        <h3>{repo.name}</h3>
+                        <p>{repo.description}</p>
+                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                            View Repository
+                        </a>
+                    </div>
                 ))}
-            </ul>
+            
         </div>
     );
                         

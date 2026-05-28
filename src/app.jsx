@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-//import components here -> NAHHH components within the pages, not here
-
 //import pages here
+import Layout from './components/layout';
 import Home from './pages/home';
 import Bio from './pages/bio';
 import Projects from './pages/projects';
@@ -15,7 +14,6 @@ const App = () => {
 
     return (
         <Router>
-            <SessionProvider>
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route index element={<Home />} />
@@ -23,7 +21,6 @@ const App = () => {
                         <Route path="projects" element={<Projects />} />
                     </Route>
                 </Routes>
-            </SessionProvider>
         </Router>
     )
 };
